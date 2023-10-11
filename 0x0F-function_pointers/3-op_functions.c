@@ -3,29 +3,61 @@
 #include <stdlib.h>
 
 /**
- * get_op_func - select the option to perform arithmetic op
- * @s: operator argument
+ * op_add - sum two numbers
+ * @a: first number
+ * @b: second number
  *
- * Return: result of selected choice
+ * Return: sum of the two numbers
  */
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
-	int i;
+	return (a + b);
+}
 
-	/* initialize i */
-	i = 0;
+/**
+ * op_sub - subtract two numbers
+ * @a: first number
+ * @b: second number
+ *
+ * Return: difference of a and b
+ */
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
 
-	/* s does not match any of the operands */
-	while (ops[i].op != NULL && *(ops[i].op) != *s)
-		i++;
+/**
+ * op_mul - multiply two numbers
+ * @a: first number
+ * @b: second number
+ *
+ * Return: product of a and b
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
 
-	return (ops[i].f); /* return operation */
+/**
+ * op_div - divide two numbers
+ * @a: first number
+ * @b: second number
+ *
+ * Return: result of division of a by b
+ */
+int op_div(int a, int b)
+{
+	return (a / b);
+}
+
+/**
+ * op_mod - remainder of the division of two numbers
+ * @a: first number
+ * @b: second number
+ *
+ * Return: remainder of the division of a by b
+ */
+int op_mod(int a, int b)
+{
+	return (a % b);
 }
